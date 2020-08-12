@@ -71,7 +71,7 @@ void loop() {
       
       // Make an HTTP request:
       client.println(String("") + "POST /.uploadMkr.php?project=mkrAudio&val1=" + mag + " HTTP/1.1");
-      client.println("Host: proxy.mlrg.soe.uoguelph.ca");
+      client.println("Host: " + server);
       client.println("Connection: close");
       client.println();
 
