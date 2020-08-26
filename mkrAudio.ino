@@ -105,19 +105,13 @@ bool wifiConnect(){
     // attempt to connect to Wifi network:
     status = WL_IDLE_STATUS;
     while (status != WL_CONNECTED) {
-      //Serial.print("Attempting to connect to SSID: ");
-      //Serial.println(ssid);
       // Connect to WEP network:
       status = WiFi.begin(ssid);
   
       // wait 1 second for connection:
       delay(1000);
     }
-    //Serial.println("Connected to wifi");
-    //printWifiStatus();
-  
-    //Serial.println("\nStarting connection to server...");
-  
+    
     if (client.connect(server, 33333)) {
       //Serial.println("Connected to server");
       wifiConnected = true;
@@ -134,12 +128,9 @@ bool wifiDisconnect(){
   WiFi.end();
 }
 
-void wakeUp(){
-  //Serial.println("Waking up");
-}
+void wakeUp(){}
 
 double updateAverageMag(){
-  //float magQueue[MAG_QUEUE_SIZE];
   double averageMag;
   double i;
   double j;
